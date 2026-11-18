@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061426">
+<meta name="description" content="Alkoç Elektrik - Elektrik tesisatı, elektrik malzemeleri, dekorasyon ve tadilat hizmetleri.">
+<title>Alkoç Elektrik | Profesyonel Elektrik Çözümleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#061426;
+  --blue:#168cff;
+  --cyan:#5de1ff;
+  --white:#f4f9ff;
+  --muted:#9db2cc;
+  --border:rgba(110,190,255,.17);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:Manrope,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+  radial-gradient(circle at 80% 10%,#0879d52b,transparent 35%),
+  radial-gradient(circle at 10% 60%,#0879d51c,transparent 40%),
+  linear-gradient(130deg,#061426,#091c32,#061426);
+}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{
+  position:sticky;top:0;z-index:100;
+  background:#061426df;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+nav{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  font-size:19px;
+  font-weight:800;
+  letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-icon{
+  width:43px;height:43px;
+  display:grid;place-items:center;
+  border-radius:13px;
+  color:#031426;
+  font-size:25px;
+  background:linear-gradient(135deg,#69e8ff,#168cff);
+  box-shadow:0 0 25px #168cff55;
+}
+.logo small{
+  display:block;
+  font-size:9px;
+  color:var(--muted);
+  letter-spacing:2px;
+}
+.navlinks{display:flex;gap:28px}
+.navlinks a{
+  color:#c5d8eb;
+  text-decoration:none;
+  font-size:13px;
+  transition:.3s;
+}
+.navlinks a:hover{color:var(--cyan)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:14px 21px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#031426;
+  font-size:13px;
+  font-weight:800;
+  background:linear-gradient(120deg,#168cff,#5de1ff);
+  box-shadow:0 8px 30px #168cff35;
+  transition:.3s;
+  border:0;
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:0 14px 35px #168cff66}
+.btn-outline{
+  background:#102942;
+  color:white;
+  border:1px solid var(--border);
+  box-shadow:none;
+}
+.menu{
+  display:none;
+  background:#102942;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:10px 13px;
+  font-size:20px;
+}
+.hero{
+  min-height:680px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+  padding:75px 0;
+}
+.tag{
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+}
+h1{
+  font-size:clamp(43px,6vw,76px);
+  line-height:1.08;
+  letter-spacing:-3px;
+  margin:23px 0;
+}
+.gradient{
+  background:linear-gradient(90deg,#fff,#65dfff,#168cff);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p{
+  max-width:530px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.stats{
+  display:flex;
+  gap:35px;
+  margin-top:45px;
+  flex-wrap:wrap;
+}
+.stats strong{display:block;font-size:22px}
+.stats span{font-size:10px;color:var(--muted)}
+.visual{
+  height:440px;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.orb{
+  position:absolute;
+  width:330px;height:330px;
+  border-radius:50%;
+  background:radial-gradient(circle,#168cff55,transparent 70%);
+  animation:pulse 5s infinite;
+}
+.ring{
+  position:absolute;
+  width:360px;height:360px;
+  border:1px solid #4dcaff55;
+  border-radius:50%;
+  animation:rotate 18s linear infinite;
+  box-shadow:0 0 35px #168cff22;
+}
+.ring:before{
+  content:"";
+  position:absolute;
+  inset:35px;
+  border:1px solid #4dcaff55;
+  border-radius:50%;
+}
+.lightning{
+  font-size:175px;
+  color:#65e4ff;
+  text-shadow:0 0 25px #168cff,0 0 70px #168cff;
+  animation:float 4s ease-in-out infinite;
+  z-index:2;
+}
+.float-card{
+  position:absolute;
+  padding:15px 19px;
+  background:#0c2743e8;
+  border:1px solid var(--border);
+  border-radius:13px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 12px 35px #0005;
+  animation:float 5s infinite;
+}
+.float-card b{font-size:12px;display:block}
+.float-card small{font-size:10px;color:var(--muted)}
+.card-one{top:55px;right:0}
+.card-two{bottom:55px;left:0;animation-delay:-2s}
+section{padding:95px 0}
+.section-title{margin-bottom:40px;max-width:650px}
+.section-title h2{
+  font-size:clamp(32px,4vw,48px);
+  letter-spacing:-2px;
+  margin:15px 0;
+}
+.section-title p{color:var(--muted);line-height:1.8;font-size:14px}
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.service{
+  padding:30px;
+  min-height:245px;
+  border-radius:19px;
+  background:linear-gradient(145deg,#102b47,#091a2e);
+  border:1px solid var(--border);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+.service:hover{
+  transform:translateY(-9px);
+  border-color:#35baff99;
+  box-shadow:0 20px 45px #0005;
+}
+.service-icon{
+  font-size:35px;
+  color:var(--cyan);
+  margin-bottom:24px;
+}
+.service h3{font-size:18px;margin-bottom:13px}
+.service p{font-size:13px;line-height:1.8;color:var(--muted)}
+.about{
+  background:linear-gradient(100deg,#102a44aa,#06142655);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+.about-art{
+  min-height:340px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background:radial-gradient(circle,#168cff44,transparent 65%),#0b2037;
+}
+.about-art span{
+  font-size:125px;
+  color:var(--cyan);
+  text-shadow:0 0 50px #168cff;
+  animation:float 4s infinite;
+}
+.about-text h2{font-size:39px;margin:17px 0}
+.about-text p{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:15px}
+.checks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-top:25px;
+  font-size:12px;
+}
+.checks span:before{content:"✓";color:var(--cyan);margin-right:9px}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+.contact-box,.location-box{
+  padding:30px;
+  background:linear-gradient(145deg,#102b47,#091a2e);
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+.contact-box h2{font-size:30px;margin-bottom:12px}
+.contact-box>p,.location-box p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+.person{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+.person:last-of-type{border:0}
+.person b{display:block;font-size:14px}
+.person small{font-size:11px;color:var(--muted)}
+.call{
+  text-decoration:none;
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:800;
+  padding:11px 14px;
+  border:1px solid #168cff55;
+  border-radius:10px;
+  white-space:nowrap;
+  transition:.3s;
+}
+.call:hover{background:#168cff22;transform:translateY(-2px)}
+.instagram{
+  display:inline-block;
+  margin-top:20px;
+  padding:13px 18px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+  transition:.3s;
+}
+.instagram:hover{border-color:var(--cyan);color:var(--cyan)}
+.location-box{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  min-height:330px;
+}
+.location-box .pin{font-size:48px;color:var(--cyan);margin-bottom:15px}
+.location-box h3{font-size:22px;margin-bottom:12px}
+.location-box .btn{margin-top:20px}
+footer{
+  border-top:1px solid var(--border);
+  padding:27px 0;
+  color:var(--muted);
+  font-size:11px;
+}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s,transform .7s;
+}
+.reveal.show{opacity:1;transform:translateY(0)}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes pulse{50%{transform:scale(1.15);opacity:.65}}
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr;padding:65px 0}
+  .visual{height:380px}
+  .about-grid{grid-template-columns:1fr;gap:35px}
+  .contact-grid{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 30px)}
+  nav{min-height:70px}
+  .menu{display:block}
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:75px;left:15px;right:15px;
+    padding:20px;
+    background:#0b2037;
+    border:1px solid var(--border);
+    border-radius:13px;
+    flex-direction:column;
+    gap:20px;
+  }
+  .navlinks.open{display:flex}
+  nav>.btn{display:none}
+  .hero{padding:60px 0 40px;min-height:auto}
+  h1{font-size:47px;letter-spacing:-2px}
+  .hero p{font-size:13px}
+  .visual{height:330px;margin-top:10px}
+  .orb,.ring{width:270px;height:270px}
+  .lightning{font-size:140px}
+  .card-one{right:-5px;top:30px}
+  .card-two{left:-5px;bottom:25px}
+  section{padding:70px 0}
+  .services{grid-template-columns:1fr}
+  .service{min-height:205px}
+  .about-art{min-height:260px}
+  .about-text h2{font-size:32px}
+  .checks{grid-template-columns:1fr}
+  .contact-box,.location-box{padding:23px}
+  .person{align-items:flex-start;flex-direction:column}
+  .call{display:inline-flex;min-height:43px;align-items:center}
+  .actions .btn{flex:1;min-height:49px}
+  .stats{gap:23px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a href="#anasayfa" class="logo" style="text-decoration:none;color:white">
+      <span class="logo-icon">ϟ</span>
+      <span>ALKOÇ ELEKTRİK<small>TESİSAT • DEKORASYON</small></span>
+    </a>
+
+    <div class="navlinks" id="navlinks">
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+
+    <a class="btn" href="tel:+905355995417">☎ Hemen Ara</a>
+    <button class="menu" id="menu">☰</button>
+  </nav>
+</header>
+
+<main>
+<section class="container hero" id="anasayfa">
+  <div class="reveal">
+    <div class="tag">GÜVENİLİR İŞÇİLİK · MODERN ÇÖZÜMLER</div>
+    <h1>Enerjiyi<br><span class="gradient">geleceğe</span><br>taşıyoruz.</h1>
+    <p>
+      Elektrik tesisatı, elektrik malzemeleri, dekorasyon ve tadilat
+      alanlarında profesyonel çözümler. İhtiyacınıza uygun hizmet için
+      Alkoç Elektrik ekibiyle iletişime geçin.
+    </p>
+    <div class="actions">
+      <a class="btn" href="tel:+905355995417">☎ Hemen Arayın</a>
+      <a class="btn btn-outline" href="#hizmetler">Hizmetleri Keşfet ↓</a>
+    </div>
+    <div class="stats">
+      <div><strong>3+</strong><span>HİZMET ALANI</span></div>
+      <div><strong>İstanbul</strong><span>KÜÇÜKÇEKMECE</span></div>
+      <div><strong>Kalite</strong><span>ÖZENLİ İŞÇİLİK</span></div>
+    </div>
+  </div>
+
+  <div class="visual reveal">
+    <div class="orb"></div>
+    <div class="ring"></div>
+    <div class="lightning">ϟ</div>
+    <div class="float-card card-one">
+      <b>⚡ Elektrik Tesisatı</b>
+      <small>Güvenilir uygulamalar</small>
+    </div>
+    <div class="float-card card-two">
+      <b>✦ Modern Dekorasyon</b>
+      <small>Detaylarda kalite</small>
+    </div>
+  </div>
+</section>
+
+<section id="hizmetler">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="tag">HİZMETLERİMİZ</div>
+      <h2>İhtiyacınız olan güç,<br><span class="gradient">tek bir adreste.</span></h2>
+      <p>Elektrik ve yaşam alanlarınız için farklı ihtiyaçlara yönelik hizmetler.</p>
+    </div>
+
+    <div class="services">
+      <article class="service reveal">
+        <div class="service-icon">⚡</div>
+        <h3>Elektrik Tesisatı</h3>
+        <p>Konut ve iş yerleri için elektrik tesisatı kurulumu, yenileme ve uygulama hizmetleri.</p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-icon">▦</div>
+        <h3>Elektrik Malzemeleri</h3>
+        <p>Elektrik uygulamalarında ihtiyaç duyulan malzemeler ve ürün temini.</p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-icon">⌂</div>
+        <h3>Dekorasyon & Tadilat</h3>
+        <p>Yaşam ve çalışma alanlarınızı yenilemeye yönelik dekorasyon ve tadilat çözümleri.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="hakkimizda">
+  <div class="container about-grid">
+    <div class="about-art reveal"><span>ϟ</span></div>
+    <div class="about-text reveal">
+      <div class="tag">BİZ KİMİZ?</div>
+      <h2>İşimizin merkezinde<br><span class="gradient">güven ve kalite</span> var.</h2>
+      <p>
+        Alkoç Elektrik olarak elektrik tesisatı, malzeme temini ve
+        dekorasyon-tadilat alanlarında hizmet veriyoruz.
+      </p>
+      <p>
+        Her işte ihtiyacı doğru anlamayı, düzenli çalışmayı ve müşteri
+        memnuniyetini ön planda tutuyoruz.
+      </p>
+      <div class="checks">
+        <span>Özenli işçilik</span>
+        <span>Çözüm odaklı yaklaşım</span>
+        <span>Güvenilir iletişim</span>
+        <span>Farklı hizmet alanları</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="tag">İLETİŞİM</div>
+      <h2>Bizimle <span class="gradient">iletişime geçin.</span></h2>
+      <p>Bilgi almak ve hizmet talebinizi iletmek için ustalarımızı doğrudan arayabilirsiniz.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-box reveal">
+        <h2>Ustalarımız</h2>
+        <p>Size yardımcı olmak için telefonun diğer ucundayız.</p>
+
+        <div class="person">
+          <div>
+            <b>Adem Alkoç</b>
+            <small>Elektrik Ustası</small>
+          </div>
+          <a class="call" href="tel:+905355995417">☎ 0535 599 54 17</a>
+        </div>
+
+        <div class="person">
+          <div>
+            <b>Emirhan Mustafa Alkoç</b>
+            <small>Elektrik Ustası</small>
+          </div>
+          <a class="call" href="tel:+905305995417">☎ 0530 599 54 17</a>
+        </div>
+
+        <a class="instagram"
+           href="https://www.instagram.com/alkoc_muhendislik/"
+           target="_blank" rel="noopener">
+          ◎ Instagram: @alkoc_muhendislik
+        </a>
+      </div>
+
+      <div class="location-box reveal">
+        <div class="pin">⌖</div>
+        <h3>Küçükçekmece, İstanbul</h3>
+        <p>Cennet Mahallesi ve çevresinde hizmet.</p>
+        <a class="btn"
+           href="https://www.google.com/maps/search/?api=1&query=Alko%C3%A7+Elektrik+Cennet+Mahallesi+K%C3%BC%C3%A7%C3%BCk%C3%A7ekmece"
+           target="_blank" rel="noopener">
+          Google Haritalar'da Gör ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Alkoç Elektrik. Tüm hakları saklıdır.</span>
+    <span>Elektrik • Tesisat • Dekorasyon</span>
+  </div>
+</footer>
+
+<script>
+const menu=document.getElementById("menu");
+const navlinks=document.getElementById("navlinks");
+
+menu.addEventListener("click",()=>{
+  navlinks.classList.toggle("open");
+});
+
+navlinks.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navlinks.classList.remove("open");
+  });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(element=>{
+  observer.observe(element);
+});
+</script>
+</body>
+</html>
